@@ -24,6 +24,7 @@ export const Maps = () => {
   }, []);
   useEffect(() => {
     // The function passed to useEffect will run after the render is committed to the screen.
+    // Get the MapsIndoors instance from getMapsIndoorsInstance()
 
     mapElementReference.current
       .getMapsIndoorsInstance()
@@ -33,10 +34,12 @@ export const Maps = () => {
           setLocationDetails(location);
           setIsOpen(true);
           // to set the color of clicked map specfic polygon
+          // set display rules for the different types of locations in your MapsIndoors conten
           mapsIndoorsInstance?.setDisplayRule(location.id, {
             polygonFillColor: "#31c631",
             polygonStrokeColor: "#395FE6",
             polygonVisible: true,
+            // to show the color of the room / buidling / floor in zoomin and zoom out
             polygonZoomFrom: 18,
             polygonZoomTo: 23,
             zIndex: 10,
