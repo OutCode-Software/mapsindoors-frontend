@@ -11,7 +11,6 @@ export const Maps = () => {
     // to set the center ponit of the venue
     mapElementReference.current.addEventListener("mapsIndoorsReady", (e) => {
       e.target.getMapInstance().then((mapInstance) => {
-        // mapInstance.setCenter({ lat: 38.8974905, lng: -77.0362723 }); // The White House
         mapInstance.setZoom(19);
         mapsindoors.services.VenuesService.getVenues().then((venue) => {
           mapInstance.setCenter({
